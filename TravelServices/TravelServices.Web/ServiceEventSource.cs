@@ -9,7 +9,7 @@ using Microsoft.ServiceFabric.Services.Runtime;
 
 namespace TravelServices.Web
 {
-    [EventSource(Name = "MyCompany-TravelServices-TravelServices.Web")]
+    [EventSource(Name = "TwoBitsConsulting-TravelServices-TravelServices.Web")]
     internal sealed class ServiceEventSource : EventSource
     {
         public static readonly ServiceEventSource Current = new ServiceEventSource();

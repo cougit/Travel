@@ -21,9 +21,9 @@ namespace TravelServices.Web
                 // an instance of the class is created in this host process.
 
                 ServiceRuntime.RegisterServiceAsync("TravelServices.WebType",
-                    context => new Web(context)).GetAwaiter().GetResult();
+                    context => new Api(context)).GetAwaiter().GetResult();
 
-                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(Web).Name);
+                ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(Api).Name);
 
                 // Prevents this host process from terminating so services keeps running. 
                 Thread.Sleep(Timeout.Infinite);
