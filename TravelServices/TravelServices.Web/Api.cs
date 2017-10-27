@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ServiceFabric.Services.Communication.AspNetCore;
 using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
+using System.Fabric.Description;
 
 namespace TravelServices.Web
 {
@@ -28,12 +29,19 @@ namespace TravelServices.Web
         /// <returns>The collection of listeners.</returns>
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
-            return new ServiceInstanceListener[]
-            {
-                new ServiceInstanceListener(serviceContext =>
-                    new KestrelCommunicationListener(serviceContext, "ServiceEndpoint", (url, listener) =>
+#if DEBUG
+            var useHttps = false;
+#else
+            var useHttps = true;
+#endif
+
+            var endpoints = Context.CodePackageActivationContext.GetEndpoints()
+                                   .Where(endpoint => endpoint.Protocol == EndpointProtocol.Http || (useHttps && endpoint.Protocol == EndpointProtocol.Https))
+                                   .Select(endpoint => endpoint.Name);
+            return endpoints.Select(endpoint => new ServiceInstanceListener(serviceContext =>
+                    new KestrelCommunicationListener(serviceContext, endpoint, (url, listener) =>
                     {
-                        ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting Kestrel on {url}");
+                        ServiceEventSource.Current.ServiceMessage(serviceContext, $"Starting KestrelListener on {url}");
 
                         return new WebHostBuilder()
                                     .UseKestrel()
@@ -45,8 +53,7 @@ namespace TravelServices.Web
                                     .UseServiceFabricIntegration(listener, ServiceFabricIntegrationOptions.None)
                                     .UseUrls(url)
                                     .Build();
-                    }))
-            };
+                    }), endpoint));
         }
     }
 }

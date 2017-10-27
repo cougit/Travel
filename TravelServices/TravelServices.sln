@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "TravelServices", "TravelServices\TravelServices.sfproj", "{148E3C07-38C3-49E4-803C-25DAE7EDF45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelServices.Web", "TravelServices.Web\TravelServices.Web.csproj", "{6A5C78CA-7B04-44D9-9442-1AF4389CC6D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TravelServices.Web", "TravelServices.Web\TravelServices.Web.csproj", "{6A5C78CA-7B04-44D9-9442-1AF4389CC6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

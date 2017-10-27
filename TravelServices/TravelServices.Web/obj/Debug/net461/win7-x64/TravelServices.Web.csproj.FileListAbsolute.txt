@@ -316,3 +316,9 @@ D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\obj\Debug\net461
 D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\obj\Debug\net461\win7-x64\TravelServices.Web.csproj.TravelServices.Web.exe.config
 D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\obj\Debug\net461\win7-x64\TravelServices.Web.exe
 D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\obj\Debug\net461\win7-x64\TravelServices.Web.pdb
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Microsoft.AspNetCore.StaticFiles.dll
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Microsoft.Extensions.FileProviders.Embedded.dll
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Swashbuckle.AspNetCore.dll
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Swashbuckle.AspNetCore.Swagger.dll
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Source\GitHub\Repos\Travel\TravelServices\TravelServices.Web\bin\Debug\net461\win7-x64\Swashbuckle.AspNetCore.SwaggerUI.dll
